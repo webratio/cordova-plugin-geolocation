@@ -22,7 +22,7 @@
 xmlns:rim="http://www.blackberry.com/ns/widgets"
 xmlns:android="http://schemas.android.com/apk/res/android"
            id="cordova-plugin-geolocation"
-      version="4.0.1">
+      version="4.0.1.1wr">
 
     <name>Geolocation</name>
     <description>Cordova Geolocation Plugin</description>
@@ -90,7 +90,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <header-file src="src/ios/CDVLocation.h" />
         <source-file src="src/ios/CDVLocation.m" />
         <framework src="CoreLocation.framework" />
-
+        <config-file parent="NSLocationWhenInUseUsageDescription" target="*-Info.plist" mode="merge">
+            <string>need location access to find things nearby</string>
+        </config-file>
     </platform>
 
     <!-- windows universal apps (Windows 8.1, Windows Phone 8.1, Windows 8.0) -->
